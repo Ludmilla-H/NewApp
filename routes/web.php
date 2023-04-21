@@ -20,7 +20,11 @@ use App\Http\Controllers\NewsStandardController;
 //Affichage des news pour le client ou le visiteur
 
 Route::get('/newsstandard', [NewsStandardController::class , 'index'])->name('news.standard');
+
 Route::get('/newsstandard/{actu}', [NewsStandardController::class , 'detail'])->name ('news.standard.detail');
+
+Route::get('/newsstandard/category/{id}', [NewsStandardController::class , 'index'])->name ('news.standard.category');
+//fin affichage news clients
 
 
 

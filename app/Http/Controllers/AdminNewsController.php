@@ -52,8 +52,8 @@ class AdminNewsController extends Controller
             # code...
         }
 
-        $actu->category_id = $request->category ;
-        $actu->description =  $request->description ;
+        $newsModel->category_id = $request->category ;
+        $newsModel->description =  $request->description ;
 
         $newsModel->description = $request->description ;
         

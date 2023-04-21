@@ -4,6 +4,8 @@ namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Models\User;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -19,8 +21,13 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * Register any authentication / authorization services.
      */
-    public function boot(): void
-    {
-        //
+
+    public function boot(): void {
+
+    //admin est le nom de l'autorization pour la façade gate
+    //$user->admin = collone de la base de donnée
+        Gate::define('admin', function (User $user) {
+            return $user->admin === 1;
+        });
     }
 }
