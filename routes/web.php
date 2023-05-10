@@ -52,7 +52,7 @@ Route::middleware('auth')->group(function () {
 });
 
 //Route sécurisé pour la gestion des News
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth' , 'can:admin'])->group(function () {
 
 //route pour ajouter
 Route::get('admin/news/add', [AdminNewsController::class , 'formAdd'])->name ('news.add');

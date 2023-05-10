@@ -22,11 +22,6 @@ public function index($id = 0) {
     }
     
 
-
-
-    
-
-
     //get = recuperer tout les résultat
     //paginate = filtrer
     $categories = Category::orderBy('name' , 'asc')->get() ;

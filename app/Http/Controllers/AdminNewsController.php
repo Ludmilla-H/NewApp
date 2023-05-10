@@ -10,16 +10,12 @@ use Illuminate\Support\Facades\Storage;
 class AdminNewsController extends Controller
 {
 
-    public function formAdd () { //affichage de mon formulaire
+    public function formAdd () { //affichage de mon formulaire nu et a editer
 
         $categories = Category::OrderBy('name' , 'asc')->get();
 
         return view('adminnews.edit' ,compact('categories'));
-    
-
     }
-
-
 
     public function index() {
 
@@ -64,7 +60,7 @@ class AdminNewsController extends Controller
     
         }
 
-        public function formEdit ($id = 0) { //
+        public function formEdit ($id = 0) { //maj avec l'id
 
             $actu = news::findOrFail($id) ;
             //Classer les catégories par ordre croissant

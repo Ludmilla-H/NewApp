@@ -8,6 +8,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    @yield('main')
+    @yields('main')
 </body>
 </html>
